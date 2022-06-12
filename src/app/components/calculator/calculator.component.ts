@@ -8,9 +8,33 @@ import { range } from 'rxjs';
 })
 export class CalculatorComponent implements OnInit {
   numbers = Array.from(Array(10).keys())
-  display: number = 0.0;
+  formula: string = "";
 
-  constructor() { }
+  calculate(fn:string) {
+    return new Function('return ' + fn)();
+  }
+
+  onNumberPress(value: number){
+    this.formula= this.formula + value;
+  }
+
+  onModificationPress(modification: string){
+    this.formula = this.formula + modification;
+  }
+
+  onResultPress(): void{
+    this.formula = this.calculate(this.formula);
+  }
+
+  onDotPress(): void {
+    this.formula = this.formula + ".";
+  }
+
+  onClear(): void {
+    this.formula = "";
+  }
+
+  constructor() {}
 
   ngOnInit(): void {
   }

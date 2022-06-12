@@ -1,20 +1,20 @@
 <div class="calculator-container">
 
     <div class="screen">
-      <h1>{{ display }}</h1>
+      <h1>{{ formula }}</h1>
     </div>
   
     <div class="modification-buttons">
-      <button class="btn">+</button>
-      <button class="btn">-</button>
-      <button class="btn">x</button>
-      <button class="btn">/</button>
+      <button class="btn" (click)="onModificationPress('+')">+</button>
+      <button class="btn" (click)="onModificationPress('-')">-</button>
+      <button class="btn" (click)="onModificationPress('*')">x</button>
+      <button class="btn" (click)="onModificationPress('/')">/</button>
     </div>
   
     <div class="number-buttons">
-      <button *ngFor="let number of numbers" class="btn">{{ number }}</button>
-      <button class="btn">.</button>
-      <button class="btn">c</button>
-      <button class="btn">=</button>
+      <button *ngFor="let number of numbers" (click)="onNumberPress(number)" class="btn">{{ number }}</button>
+      <button class="btn" (click)="onDotPress()">.</button>
+      <button class="btn" (click)="onClear()">c</button>
+      <button class="btn" (click)="onResultPress()">=</button>
     </div>
   </div>
