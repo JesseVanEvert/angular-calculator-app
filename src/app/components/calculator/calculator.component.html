@@ -1,0 +1,20 @@
+<div class="calculator-container">
+
+    <div class="screen">
+      <h1>{{ display }}</h1>
+    </div>
+  
+    <div class="modification-buttons">
+      <button class="btn">+</button>
+      <button class="btn">-</button>
+      <button class="btn">x</button>
+      <button class="btn">/</button>
+    </div>
+  
+    <div class="number-buttons">
+      <button *ngFor="let number of numbers" class="btn">{{ number }}</button>
+      <button class="btn">.</button>
+      <button class="btn">c</button>
+      <button class="btn">=</button>
+    </div>
+  </div>
