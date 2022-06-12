@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { range } from 'rxjs';
 
 @Component({
   selector: 'app-calculator',
