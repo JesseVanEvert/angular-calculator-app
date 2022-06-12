@@ -34,6 +34,14 @@ export class CalculatorComponent implements OnInit {
     this.formula = "";
   }
 
+  onSquare(): void {
+    this.formula = this.formula + "**2";
+  }
+
+  onPowerOfN(){
+    this.formula = this.formula + "**";
+  }  
+
   constructor() {}
 
   ngOnInit(): void {
