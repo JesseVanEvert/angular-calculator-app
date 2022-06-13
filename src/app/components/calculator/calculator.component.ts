@@ -9,7 +9,7 @@ export class CalculatorComponent implements OnInit {
   numbers = Array.from(Array(10).keys())
   formula: string = "";
 
-  calculate(fn:string) {
+  calculate(fn:string): any {
     return new Function('return ' + fn)();
   }
 
@@ -37,7 +37,7 @@ export class CalculatorComponent implements OnInit {
     this.formula = this.formula + "**2";
   }
 
-  onPowerOfN(){
+  onPowerOfN(): void{
     this.formula = this.formula + "**";
   }  
 
